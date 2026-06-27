@@ -108,3 +108,26 @@ rdf_df = pd.DataFrame({
     "g(r)": g_r
 })
 rdf_df.to_csv("OUTPUT_FILE", index=False)
+
+# ==========================================================
+# Coordination Number (First Hydration Shell)
+# ==========================================================
+
+# First minimum of the O-O RDF (adjust if necessary)
+R_CUT = 3.5  # Å
+
+# Indices up to the cutoff distance
+idx = np.where(r <= R_CUT)[0]
+
+# Coordination number
+coordination_number = (
+    4.0
+    * np.pi
+    * rho
+    * np.trapz(g_r[idx] * r[idx]**2, r[idx])
+)
+
+print("\n======================================")
+print(f"First-shell cutoff : {R_CUT:.2f} Å")
+print(f"Coordination number: {coordination_number:.3f}")
+print("======================================")
