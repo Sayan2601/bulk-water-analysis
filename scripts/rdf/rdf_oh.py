@@ -1,8 +1,8 @@
 """
-rdf_intermolecular.py
+rdf_oh.py
 
-Calculate the intermolecular radial distribution function (RDF)
-between two atom groups using MDAnalysis.
+Calculates the intermolecular O-H/H-O radial distribution function.
+Intramolecular O-H pairs are excluded.
 
 Examples
 --------
