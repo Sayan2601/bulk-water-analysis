@@ -1,10 +1,17 @@
-Scripts
-This directory contains Python scripts for post-processing and analyzing bulk water molecular dynamics (MD) simulations.
+# Radial Distribution Function (RDF) Analysis
 
-Available Scripts
-RDF Analysis (rdf/)
-rdf_oo.py Calculates the oxygen–oxygen (O–O) radial distribution function (RDF) and computes the first-shell coordination number by integrating the RDF up to the first minimum.
+This directory contains Python scripts for calculating radial distribution functions (RDFs) from molecular dynamics trajectories of bulk water.
 
-rdf_oh.py Calculates the intermolecular oxygen–hydrogen (O–H) and hydrogen–oxygen (H–O) radial distribution functions. Intramolecular O–H pairs are excluded to characterize the hydrogen-bonding structure of liquid water.
+## Available Scripts
 
-More analysis tools (e.g., mean squared displacement, hydrogen-bond analysis, rotational time correlation functions, and density profiles) will be added in future updates.
+- `rdf_oo.py` – Calculates the oxygen–oxygen RDF and estimates the first-shell coordination number.
+- `rdf_oh.py` – Calculates the intermolecular oxygen–hydrogen and hydrogen-centered oxygen RDFs.
+
+## Output
+
+The scripts generate CSV files containing:
+
+- Distance (Å)
+- RDF, g(r)
+
+The oxygen–oxygen RDF script also computes the coordination number by integrating g(r) up to the first minimum.
