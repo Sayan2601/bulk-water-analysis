@@ -16,7 +16,7 @@ from tqdm import tqdm
 
 # Input files
 GRO_FILE = "md.gro"
-XTC_FILE = "structure.xtc"
+XTC_FILE = "md.xtc"
 OUTPUT_FILE = "rdf_oh.csv"
 
 # Atom selections
