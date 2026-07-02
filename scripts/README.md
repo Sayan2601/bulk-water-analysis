@@ -11,4 +11,4 @@ This directory contains Python scripts for post-processing and analyzing bulk wa
 
 ### MSD Analysis (`msd/`)
 
-- `msd_parallel.py` — Computes the mean squared displacement (MSD) of water oxygen atoms using multiple time-origin averaging with parallel processing.
+- `msd.py` — Computes the mean squared displacement (MSD) of water oxygen atoms using multiple time-origin averaging with parallel processing.
