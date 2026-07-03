@@ -18,10 +18,6 @@ The script outputs the frame-wise average hydrogen-bond count, allowing analysis
 - `md.gro`
 - `md.xtc`
 
-## Output
-
-`average_hbonds.csv`
-
 | Column | Description |
 |--------|-------------|
 | Frame | Trajectory frame number |
