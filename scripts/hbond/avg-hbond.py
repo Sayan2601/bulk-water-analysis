@@ -82,7 +82,7 @@ def calculate_hydrogen_bonds(u,donors_sel,hydrogens_sel,acceptors_sel,params,ret
 ini_hbond_params = {"d_h_cutoff": 1.2,"d_a_cutoff": 3.5,"angle_cutoff": 30,"oh_cutoff": 2.45,"lower_angle": 0,"higher_angle": 30,"lower_dist": 0,"higher_dist": 3.5}
 
 gro = f'md.gro'
-xtc = f'structure.xtc'
+xtc = f'md.xtc'
 u = mda.Universe(gro, xtc)  
 avg_hbonds = []
 for ts in tqdm(u.trajectory):
