@@ -12,3 +12,6 @@ This directory contains Python scripts for post-processing and analyzing bulk wa
 ### MSD Analysis (`msd/`)
 
 - `msd.py` — Computes the mean squared displacement (MSD) of water oxygen atoms using multiple time-origin averaging with parallel processing.
+### Hydrogen-Bond Analysis (`hydrogen-bonds/`)
+
+- **avg_hbond.py** — Computes the average number of hydrogen bonds per water molecule for each trajectory frame using geometric hydrogen-bond criteria.
