@@ -16,7 +16,7 @@ The script outputs the frame-wise average hydrogen-bond count, allowing analysis
 ## Input
 
 - `md.gro`
-- `structure.xtc`
+- `md.xtc`
 
 ## Output
 
