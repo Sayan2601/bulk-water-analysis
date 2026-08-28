@@ -1,3 +1,11 @@
+"""
+Calculate the average number of hydrogen bonds per water molecule
+from a molecular dynamics trajectory using geometric criteria.
+
+The script identifies hydrogen bonds based on donor–acceptor distance
+and H–D–A angle, calculates the average H-bond count for each frame,
+and plots the frame-wise average.
+"""
 import numpy as np
 import pandas as pd
 import MDAnalysis as mda
@@ -91,6 +99,7 @@ for ts in tqdm(u.trajectory):
     acceptors = donors
     hbond_tuples = calculate_hydrogen_bonds(u,donors,hydrogens,acceptors,ini_hbond_params,return_tuple=True)
     df = pd.DataFrame(hbond_tuples,columns=["donor", "hydrogen", "acceptor", "dist", "angle"])
+    oxygen_indices=donors.indices
     counts = []
     for idx in oxygen_indices:
         k = df[(df["donor"] == idx) |(df["acceptor"] == idx)]
