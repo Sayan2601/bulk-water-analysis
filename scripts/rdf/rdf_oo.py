@@ -1,6 +1,4 @@
 """
-rdf_oo.py
-
 Compute the oxygen–oxygen radial distribution function (RDF) and
 estimate the first-shell coordination number from bulk water
 molecular dynamics trajectories using MDAnalysis.
