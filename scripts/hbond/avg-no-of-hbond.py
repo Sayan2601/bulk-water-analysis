@@ -3,8 +3,7 @@ Calculate the average number of hydrogen bonds per water molecule
 from a molecular dynamics trajectory using geometric criteria.
 
 The script identifies hydrogen bonds based on donor–acceptor distance
-and H–D–A angle, calculates the average H-bond count for each frame,
-and plots the frame-wise average.
+and H–D–A angle, calculates the average H-bond count for each frame.
 """
 import numpy as np
 import pandas as pd
