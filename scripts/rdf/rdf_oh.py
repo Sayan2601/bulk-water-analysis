@@ -1,6 +1,4 @@
 """
-rdf_oh.py
-
 Compute the intermolecular oxygen–hydrogen (O–H) or hydrogen–oxygen
 (H–O) radial distribution function from bulk water molecular dynamics
 trajectories using MDAnalysis.
