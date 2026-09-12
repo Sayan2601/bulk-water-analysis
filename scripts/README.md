@@ -1,20 +1,56 @@
-# Scripts
+# `scripts`
 
-This directory contains Python scripts for post-processing and analysis of bulk water molecular dynamics (MD) simulations.
+Python-based trajectory analysis workflows for bulk-water molecular dynamics simulations.
 
-## Available Analysis
+## `modules`
 
-### RDF Analysis (`rdf/`)
+```text id="v3k8qm"
+scripts/
+│
+├── rdf/
+│   ├── rdf_oo.py
+│   ├── rdf_oh.py
+│   └── rdf_example.png
+│
+├── hbond/
+│   └── avg_hbond.py
+│
+└── msd/
+    └── msd.py
+```
 
-* `rdf_oo.py` — Calculates the oxygen–oxygen (O–O) radial distribution function and first-shell coordination number.
-* `rdf_oh.py` — Calculates the intermolecular oxygen–hydrogen (O–H) and hydrogen–oxygen (H–O) radial distribution functions.
+### `rdf/`
 
-### MSD Analysis (`msd/`)
+Pair-distribution analysis of liquid water.
 
-* `msd.py` — Computes the mean squared displacement (MSD) of water oxygen atoms using multiple time-origin averaging.
+* `rdf_oo.py` — O–O radial distribution function and first-shell coordination number.
+* `rdf_oh.py` — intermolecular O–H / H–O radial distribution functions.
 
-### Hydrogen-Bond Analysis (`hbond/`)
+### `hbond/`
 
-* `avg_hbond.py` — Computes the average number of hydrogen bonds per water molecule using geometric hydrogen-bond criteria.
+Geometric hydrogen-bond analysis.
 
-Further analysis workflows will be added progressively.
+* `avg_hbond.py` — frame-resolved average hydrogen-bond population per water molecule.
+
+### `msd/`
+
+Translational dynamics.
+
+* `msd.py` — oxygen-atom mean squared displacement using multiple time origins.
+
+## `dependencies`
+
+```text
+MDAnalysis
+NumPy
+Pandas
+Matplotlib
+Joblib
+tqdm
+```
+
+The scripts are intended to remain modular and adaptable to different molecular dynamics trajectories and simulation conditions.
+
+---
+
+`status: active development`
