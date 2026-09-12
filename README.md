@@ -1,70 +1,87 @@
-# Bulk Water Analysis
+# `bulk-water-analysis`
 
-A collection of Python scripts for post-processing and analyzing molecular dynamics (MD) simulations of bulk water.
+> Molecular dynamics analysis workflows for structural and dynamical characterization of liquid water.
 
-The repository contains analysis tools developed for studying the structural and dynamical properties of liquid water using MD trajectories. The scripts are primarily written using MDAnalysis and are designed to be easily adapted to different simulation systems.
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python\&logoColor=white)](https://www.python.org/)
+[![MDAnalysis](https://img.shields.io/badge/MDAnalysis-trajectory%20analysis-222222)](https://www.mdanalysis.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## Features
+---
 
-Current analyses include:
+## `analysis/`
 
-- **Radial Distribution Function (RDF)**
-  - Oxygen–oxygen (O–O) RDF
-  - Intermolecular oxygen–hydrogen (O–H) RDF
-  - Hydrogen-centered oxygen (H–O) RDF
-  - First-shell coordination number
+### `rdf/`
 
-- **Mean Squared Displacement (MSD)**
-  - Multiple time-origin averaging
-  - Parallel processing using Joblib
-  - Statistical averaging over independent time origins
+Structural analysis through pair correlation functions.
 
-## Repository Structure
+* **O–O RDF**
+* **O–H / H–O RDF**
+* **First-shell coordination number**
 
-```
+### `hbond/`
+
+Geometric hydrogen-bond analysis.
+
+* **Hydrogen-bond population**
+* **Average H-bonds per water molecule**
+
+### `msd/`
+
+Translational dynamics from trajectory coordinates.
+
+* **Oxygen MSD**
+* **Multiple time-origin averaging**
+* **Statistical averaging across time origins**
+
+---
+
+## `repository/`
+
+```text
 bulk-water-analysis/
+│
 ├── scripts/
 │   ├── rdf/
+│   ├── hbond/
 │   └── msd/
+│
 ├── LICENSE
 └── README.md
 ```
 
-## Requirements
+---
 
-- Python 3.10+
-- MDAnalysis
-- NumPy
-- Pandas
-- Matplotlib
-- Joblib
-- tqdm
+## `stack`
 
-Install the required packages with:
-
-```bash
-pip install MDAnalysis numpy pandas matplotlib joblib tqdm
+```text
+Python
+├── MDAnalysis
+├── NumPy
+├── Pandas
+├── Matplotlib
+├── Joblib
+└── tqdm
 ```
 
-## Input Files
+The analysis workflows are developed for atomistic molecular dynamics trajectories and are primarily used with GROMACS-generated data.
 
-The scripts are designed for molecular dynamics trajectories and typically require:
+---
 
-- Structure file (`.gro`)
-- Trajectory file (`.xtc`)
+## `status`
 
-Modify the input filenames in each script before running.
+```text
+[active development]
 
-## Future Development
+rdf        ██████████  complete
+hbond      ██████████  current
+msd        ██████████  current
+additional analyses   → incoming
+```
 
-Planned additions include:
+Further analysis workflows will be added as they are developed and finalized.
 
-- Hydrogen-bond analysis
-- Rotational time correlation functions
-- Density profile calculations
-- Diffusion coefficient analysis
-- Structural order parameter analysis
+---
 
-## License
+## `license`
 
-This project is released under the MIT License.
+MIT
