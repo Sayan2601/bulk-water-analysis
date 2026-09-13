@@ -111,4 +111,4 @@ df_i_hb_lifetime=pd.DataFrame(i_hb_lifetime)
 i_hb_final_df=pd.DataFrame()
 i_hb_final_df['time']=[i*(u.trajectory.dt) for i in range(len(df_i_hb_lifetime.columns))]
 i_hb_final_df['c_hb']=df_i_hb_lifetime.mean(axis=0).values.tolist()
-i_hb_final_df.to_csv(f'spce-300k_{cal_type}_HB_dyn_{analysis_time}ps.csv',index=False)
+i_hb_final_df.to_csv(f'spce-300k-{cal_type}-HB-dyn-{analysis_time}ps.csv',index=False)
