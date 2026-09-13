@@ -17,7 +17,6 @@ Structural analysis through pair correlation functions.
 * **O–O RDF**
 * **O–H / H–O RDF**
 * **First-shell coordination number**
-* Example RDF plot
 
 ### `hbond/`
 
@@ -27,7 +26,6 @@ Geometric hydrogen-bond analysis and hydrogen-bond dynamics.
 * **Average H-bonds per water molecule**
 * **Continuous H-bond lifetime correlation**
 * **Intermittent H-bond lifetime correlation**
-* Example H-bond lifetime plot
 
 ### `msd/`
 
@@ -36,11 +34,26 @@ Translational dynamics from trajectory coordinates.
 * **Oxygen MSD**
 * **Multiple time-origin averaging**
 * **Statistical averaging across time origins**
-* Example MSD plot
 
 ---
 
-## `repository/`
+## Example results
+
+Representative figures produced by the analysis workflows are shown below.
+
+<p align="center">
+  <img src="examples/figures/rdf_example.png" width="45%">
+  <img src="examples/figures/hbond_example.png" width="45%">
+</p>
+
+<p align="center">
+  <img src="examples/figures/hb_lifetime_example.png" width="45%">
+  <img src="examples/figures/msd_example.png" width="45%">
+</p>
+
+---
+
+## Repository structure
 
 ```text
 bulk-water-analysis/
@@ -48,25 +61,33 @@ bulk-water-analysis/
 ├── scripts/
 │   ├── rdf/
 │   │   ├── rdf_oo.py
-│   │   ├── rdf_oh.py
-│   │   └── rdf_example.png
+│   │   └── rdf_oh.py
 │   │
 │   ├── hbond/
 │   │   ├── hbond_average.py
-│   │   ├── hbond_lifetime.py
-│   │   └── hb_lifetime_example.png
+│   │   └── hbond_lifetime.py
 │   │
 │   └── msd/
-│       ├── msd_parallel.py
+│       └── msd.py
+│
+├── input/
+│   └── README.md
+│
+├── examples/
+│   └── figures/
+│       ├── rdf_example.png
+│       ├── hbond_example.png
+│       ├── hb_lifetime_example.png
 │       └── msd_example.png
 │
+├── requirements.txt
 ├── LICENSE
 └── README.md
 ```
 
 ---
 
-## `stack`
+## Stack
 
 ```text
 Python
@@ -82,7 +103,7 @@ The analysis workflows are developed for atomistic molecular dynamics trajectori
 
 ---
 
-## `status`
+## Status
 
 ```text
 [active development]
@@ -97,6 +118,6 @@ Further analysis workflows will be added as they are developed and finalized.
 
 ---
 
-## `license`
+## License
 
 MIT
