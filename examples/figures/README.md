@@ -2,17 +2,33 @@
 
 This directory contains representative figures generated from the analysis scripts in `scripts/`.
 
-### RDF
+## RDF
+
+**O–O radial distribution function**
+
+![RDF example](rdf_example.png)
 
 `rdf_example.png` — Example oxygen–oxygen radial distribution function.
 
-### Hydrogen bonds
+## Hydrogen bonds
+
+**Hydrogen-bond population**
+
+![Hydrogen-bond example](hbond_example.png)
 
 `hbond_example.png` — Example hydrogen-bond population analysis.
 
+**Hydrogen-bond lifetime**
+
+![Hydrogen-bond lifetime example](hb_lifetime_example.png)
+
 `hb_lifetime_example.png` — Example continuous and intermittent hydrogen-bond lifetime analysis.
 
-### MSD
+## MSD
+
+**Mean-squared displacement**
+
+![MSD example](msd_example.png)
 
 `msd_example.png` — Example oxygen mean-squared displacement analysis.
 
