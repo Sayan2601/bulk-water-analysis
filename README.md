@@ -37,6 +37,82 @@ Translational dynamics from trajectory coordinates.
 
 ---
 
+## Installation
+
+Clone the repository and install the Python dependencies:
+
+```bash
+git clone https://github.com/Sayan2601/bulk-water-analysis.git
+cd bulk-water-analysis
+python -m pip install -r requirements.txt
+```
+
+The workflows are intended for Python 3.x and GROMACS-generated molecular dynamics trajectories.
+
+---
+
+## Input files
+
+The scripts currently use fixed input filenames. Place the required files in the directory from which the script is run.
+
+| Analysis | Required input | Output |
+|---|---|---|
+| O–O RDF | `md.gro`, `md.xtc` | `rdf_oo.csv` |
+| O–H / H–O RDF | `md.gro`, `md.xtc` | `rdf_oh.csv` or `rdf_ho.csv` |
+| H-bond average | `md.gro`, `md.xtc` | printed average |
+| H-bond lifetime | `dynamic.gro`, `dynamic.xtc` | continuous/intermittent CSV files |
+| MSD | `md.gro`, `unwrapped.xtc` | `msd.csv` |
+
+Large production trajectories are intentionally not stored in the repository. See [`input/`](input/) for details.
+
+---
+
+## Usage
+
+Run the scripts from a directory containing the required input files.
+
+### O–O RDF
+
+```bash
+python scripts/rdf/rdf_oo.py
+```
+
+Calculates the oxygen–oxygen RDF and prints the coordination number using the current first-shell cutoff.
+
+### O–H RDF
+
+```bash
+python scripts/rdf/rdf_oh.py
+```
+
+The default calculation is intermolecular O–H. The atom selections in the script can be swapped to calculate H–O instead.
+
+### Hydrogen-bond average
+
+```bash
+python scripts/hbond/hbond_average.py
+```
+
+Calculates the geometric hydrogen-bond population and reports the average number of hydrogen bonds per water molecule.
+
+### Hydrogen-bond lifetime
+
+```bash
+python scripts/hbond/hbond_lifetime.py
+```
+
+Calculates continuous and intermittent hydrogen-bond lifetime correlation functions using multiple analysis windows.
+
+### Mean-squared displacement
+
+```bash
+python scripts/msd/msd.py
+```
+
+Calculates oxygen MSD using multiple time origins. The trajectory must contain unwrapped coordinates.
+
+---
+
 ## Repository structure
 
 ```text
@@ -59,11 +135,11 @@ bulk-water-analysis/
 │
 ├── examples/
 │   └── figures/
+│       ├── README.md
 │       ├── rdf_example.png
 │       ├── hbond_example.png
 │       ├── hb_lifetime_example.png
-│       ├── msd_example.png
-│       └── README.md
+│       └── msd_example.png
 │
 ├── requirements.txt
 ├── LICENSE
@@ -84,7 +160,11 @@ Python
 └── tqdm
 ```
 
-The analysis workflows are developed for atomistic molecular dynamics trajectories and are primarily used with GROMACS-generated data.
+---
+
+## Example figures
+
+Representative outputs are collected in [`examples/figures/`](examples/figures/). The figure README displays the plots directly.
 
 ---
 
