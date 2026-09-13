@@ -37,22 +37,6 @@ Translational dynamics from trajectory coordinates.
 
 ---
 
-## Example results
-
-Representative figures produced by the analysis workflows are shown below.
-
-<p align="center">
-  <img src="examples/figures/rdf_example.png" width="45%">
-  <img src="examples/figures/hbond_example.png" width="45%">
-</p>
-
-<p align="center">
-  <img src="examples/figures/hb_lifetime_example.png" width="45%">
-  <img src="examples/figures/msd_example.png" width="45%">
-</p>
-
----
-
 ## Repository structure
 
 ```text
@@ -78,7 +62,8 @@ bulk-water-analysis/
 │       ├── rdf_example.png
 │       ├── hbond_example.png
 │       ├── hb_lifetime_example.png
-│       └── msd_example.png
+│       ├── msd_example.png
+│       └── README.md
 │
 ├── requirements.txt
 ├── LICENSE
