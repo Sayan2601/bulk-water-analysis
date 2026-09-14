@@ -24,6 +24,14 @@ This directory contains representative figures generated from the analysis scrip
 
 `hb_lifetime_example.png` — Example continuous and intermittent hydrogen-bond lifetime analysis.
 
+## Orientational correlation
+
+**O–H rotational correlation functions**
+
+![Orientational correlation example](p1_p2_p3_correlation.png)
+
+`p1_p2_p3_correlation.png` — Example first-, second-, and third-rank rotational correlation functions (P1, P2, and P3) of O–H bond vectors.
+
 ## MSD
 
 **Mean-squared displacement**
