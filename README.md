@@ -186,20 +186,6 @@ Python
 └── tqdm
 ```
 
----
-
-## Example figures
-
-Representative outputs are collected in [`examples/figures/`](examples/figures/). The figure README displays the plots directly.
-
-### Orientational correlation
-
-![O–H rotational correlation example](examples/figures/p1_p2_p3_correlation.png)
-
-Example first-, second-, and third-rank rotational correlation functions (P1, P2, and P3) of O–H bond vectors.
-
----
-
 ## Status
 
 ```text
