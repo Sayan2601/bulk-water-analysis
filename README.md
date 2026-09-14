@@ -35,6 +35,15 @@ Translational dynamics from trajectory coordinates.
 * **Multiple time-origin averaging**
 * **Statistical averaging across time origins**
 
+### `correlation/`
+
+Rotational dynamics from molecular orientation.
+
+* **O–H rotational correlation functions**
+* **First-, second-, and third-rank correlation functions (P1, P2, P3)**
+* **O–H bond-vector self correlation**
+* **The same correlation procedure can be adapted to normalized molecular dipole vectors**
+
 ---
 
 ## Installation
@@ -62,6 +71,7 @@ The scripts currently use fixed input filenames. Place the required files in the
 | H-bond average | `md.gro`, `md.xtc` | printed average |
 | H-bond lifetime | `dynamic.gro`, `dynamic.xtc` | continuous/intermittent CSV files |
 | MSD | `md.gro`, `unwrapped.xtc` | `msd.csv` |
+| O–H rotational correlation | `dynamic.gro`, `dynamic.xtc` | `tcf-15ps-p1-p2-p3.csv` |
 
 Large production trajectories are intentionally not stored in the repository. See [`input/`](input/) for details.
 
@@ -111,6 +121,16 @@ python scripts/msd/msd.py
 
 Calculates oxygen MSD using multiple time origins. The trajectory must contain unwrapped coordinates.
 
+### O–H rotational correlation
+
+```bash
+python scripts/correlation/orientational-correlation.py
+```
+
+Calculates first-, second-, and third-rank rotational correlation functions (P1, P2, and P3) of O–H bond vectors. The calculation correlates the same O–H vector across time origins and averages over the O–H vectors.
+
+The same correlation procedure can be applied to normalized molecular dipole vectors by replacing the O–H vector construction while keeping the correlation calculation unchanged.
+
 ---
 
 ## Repository structure
@@ -127,8 +147,11 @@ bulk-water-analysis/
 │   │   ├── hbond_average.py
 │   │   └── hbond_lifetime.py
 │   │
-│   └── msd/
-│       └── msd.py
+│   ├── msd/
+│   │   └── msd.py
+│   │
+│   └── correlation/
+│       └── orientational-correlation.py
 │
 ├── input/
 │   └── README.md
@@ -139,7 +162,8 @@ bulk-water-analysis/
 │       ├── rdf_example.png
 │       ├── hbond_example.png
 │       ├── hb_lifetime_example.png
-│       └── msd_example.png
+│       ├── msd_example.png
+│       └── p1_p2_p3_correlation.png
 │
 ├── requirements.txt
 ├── LICENSE
@@ -156,6 +180,8 @@ Python
 ├── NumPy
 ├── Pandas
 ├── Matplotlib
+├── SciPy
+├── Seaborn
 ├── Joblib
 └── tqdm
 ```
@@ -166,6 +192,12 @@ Python
 
 Representative outputs are collected in [`examples/figures/`](examples/figures/). The figure README displays the plots directly.
 
+### Orientational correlation
+
+![O–H rotational correlation example](examples/figures/p1_p2_p3_correlation.png)
+
+Example first-, second-, and third-rank rotational correlation functions (P1, P2, and P3) of O–H bond vectors.
+
 ---
 
 ## Status
@@ -173,10 +205,11 @@ Representative outputs are collected in [`examples/figures/`](examples/figures/)
 ```text
 [active development]
 
-rdf        ██████████  complete
-hbond      ██████████  complete
-msd        ██████████  complete
-additional analyses   → incoming
+rdf          ██████████  complete
+hbond        ██████████  complete
+msd          ██████████  complete
+correlation  ██████████  complete
+additional analyses     → incoming
 ```
 
 Further analysis workflows will be added as they are developed and finalized.
